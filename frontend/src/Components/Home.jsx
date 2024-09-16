@@ -3,11 +3,11 @@ import Footer from './Footer';
 function Home() {
 
   const countboxes = [
-    { service: "Consultation", number: "10000", image: "images/consultation.png" },
-    { service: "Surgeries", number: "2000", image: "images/surgery.png" },
-    { service: "Angiography", number: "800", image: "images/angiography.png" },
-    { service: "Radiology", number: "1200", image: "images/radiology.png" }, 
-    { service: "Pathology", number: "1500", image: "images/pathology.png" }, 
+    { service: "Consultation", number: "10000", image: "/consultation.png" },
+    { service: "Surgeries", number: "2000", image: "/surgery.png" },
+    { service: "Angiography", number: "800", image: "/angiography.png" },
+    { service: "Radiology", number: "1200", image: "/radiology.png" }, 
+    { service: "Pathology", number: "1500", image: "/pathology.png" }, 
     { service: "Emergency Cases", number: "5000", image: "images/emergency.png" }
   
   ]
