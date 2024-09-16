@@ -49,7 +49,7 @@ const services = [
 
 function Services() {
   return (
-    <div className='m-10'>
+    <div className='m-10 bg-shade'>
       <p className='text-4xl font-bold text-center mb-4'>Our Services</p>
       <div className='flex flex-wrap gap-6 justify-center  items-center'>
         {services.map((service, index) => (

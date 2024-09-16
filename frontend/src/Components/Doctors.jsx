@@ -14,12 +14,12 @@ const departments = [
 
 function Doctors() {
   return (
-
-    <div className='m-10'>
+     <div className='bg-shade'>
+    <div className='m-10 '>
     <div className='flex flex-col mb-4'>
-      <p className='text-4xl font-bold text-center mb-4'>Meet Our Doctors</p>
-      <p className='text-xl text-center leading-2 mb-4'>Get to Know the Experienced and Compassionate Doctors at Sagarmatha General Hospital.</p>
-      <p className='text-xl text-center leading-2 mb-4'>Our Team of Experts is Dedicated to Providing Top-Quality Medical Care Across Various Specialties, Ensuring You Receive the Best Treatment for Your Needs</p>
+      <p className='text-4xl font-bold text-dblue text-center mb-4'>Meet Our Doctors</p>
+      <p className='text-xl text-center text-dgray leading-2 mb-4'>Get to Know the Experienced and Compassionate Doctors at Sagarmatha General Hospital.</p>
+      <p className='text-xl text-center  text-dgray leading-2 mb-4'>Our Team of Experts is Dedicated to Providing Top-Quality Medical Care Across Various Specialties, Ensuring You Receive the Best Treatment for Your Needs</p>
     </div>
    
     <div className='flex flex-wrap gap-6 justify-center p-4'>
@@ -31,14 +31,15 @@ function Doctors() {
               alt={doctor}
               className='w-32 h-32 object-cover rounded-full mb-4'
             />
-            <h2 className='text-2xl font-bold mb-4'>{doctor}</h2>
+            <h2 className='text-2xl font-bold mb-4 text-dpurple'>{doctor}</h2>
             <div className='text-left'>
-              <p className="text-gray-700 mb-2"><strong className='text-black'>Specialty: </strong>{specialties[index]}</p>
-              <p className="text-gray-700"><strong className='text-black'>Department: </strong>{departments[index]}</p>
+              <p className="text-gray-700 mb-2 "><strong className='text-black text-tea'>Specialty: </strong>{specialties[index]}</p>
+              <p className="text-gray-700"><strong className='text-black text-tea'>Department: </strong>{departments[index]}</p>
             </div>
           </div>
         </div>
       ))}
+    </div>
     </div>
     </div>
   );
