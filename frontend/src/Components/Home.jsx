@@ -8,7 +8,7 @@ function Home() {
     { service: "Angiography", number: "800", image: "/angiography.png" },
     { service: "Radiology", number: "1200", image: "/radiology.png" }, 
     { service: "Pathology", number: "1500", image: "/pathology.png" }, 
-    { service: "Emergency Cases", number: "5000", image: "images/emergency.png" }
+    { service: "Emergency Cases", number: "5000", image: "/emergency.png" }
   
   ]
   const reviews = [
