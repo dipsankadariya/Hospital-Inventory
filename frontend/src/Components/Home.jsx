@@ -72,7 +72,7 @@ function Home() {
       <div className="flex flex-wrap gap-6 justify-center p-4">
     {details.map((detail, index) => (
       <div
-        className={`bg-white shadow-md rounded-lg flex items-center p-8 max-w-xs flex-1 min-w-[250px] ${detail.bgColor}`}
+        className={`shadow-md rounded-lg flex items-center p-8 max-w-xs flex-1 min-w-[250px] ${detail.bgColor}`}
         key={index}
       >
         <img
