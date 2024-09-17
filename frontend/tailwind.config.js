@@ -22,7 +22,10 @@ export default {
         "Fuchsia" :"#f5d0fe",
         "teal":"#2dd4bf",
         "sky":"#bae6fd",
-        "red":"#dc2626"
+        "red":"#dc2626",
+        "orange500": "#f97316",
+        "red600":"#dc2626"
+        
       },
     },
   },

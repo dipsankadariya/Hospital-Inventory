@@ -36,6 +36,28 @@ function Home() {
     "Obstetrics and Gynecology Surgery": "/obs.png"
   };
 
+  const details = [
+    {
+      number: "5",
+      service: "Total Doctor",
+      image: "/doctor.png",
+      bgColor: "bg-red600",
+    },
+    {
+      number: "20",
+      service: "Total Patients",
+      image: "/patient.png",
+      bgColor: "bg-orange500",
+    },
+    {
+      number: "4",
+      service: "Waiting Patients",
+      image: "/patient.png",
+      bgColor: "bg-dgreen",
+    },
+  ];
+
+
   return (
     <div className='bg-shade'>
       <div className='mb-16'>
@@ -45,6 +67,31 @@ function Home() {
           Sagarmatha General Hospital, established in 2024, stands as a beacon of advanced healthcare in the heart of Birtamode, Jhapa. Our state-of-the-art facility is dedicated to delivering exceptional medical care with compassion and expertise. Equipped with cutting-edge technology and a team of highly skilled professionals, we offer a comprehensive range of services to meet the diverse needs of our community. From routine consultations to complex surgeries, our commitment is to provide top-quality care in a comfortable and welcoming environment. At Sagarmatha General Hospital, your health and well-being are our top priorities.
         </p>
       </div>
+
+
+      <div className="flex flex-wrap gap-6 justify-center p-4">
+    {details.map((detail, index) => (
+      <div
+        className={`bg-white shadow-md rounded-lg flex items-center p-8 max-w-xs flex-1 min-w-[250px] ${detail.bgColor}`}
+        key={index}
+      >
+        <img
+          src={detail.image}
+          alt={detail.service}
+          className="w-20 h-20 mr-4"
+        />
+        <div className="flex flex-col text-left">
+          <p className="text-3xl font-bold text-white">
+            {detail.number}<span className="text-3xl text-white-600">+</span>
+          </p>
+          <p className="text-xl font-bold text-white mt-2">
+            {detail.service}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+
       <div className='mt-8 mb-16 p-6 bg-dindigo text-white text-center rounded-lg'>
         <h2 className='text-2xl font-bold mb-4'>Schedule an Appointment</h2>
         <p className='mb-4 text-xl'>Ready to take the next step in your health journey? Schedule an appointment with one of our specialists today.</p>
@@ -54,6 +101,8 @@ function Home() {
           </button>
         </a>
       </div>
+
+   
 
       <div className='flex flex-wrap gap-4 justify-center p-4'>
         {countboxes.map((countbox, index) => (
