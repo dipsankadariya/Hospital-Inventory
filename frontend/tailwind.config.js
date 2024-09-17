@@ -16,11 +16,13 @@ export default {
         'lgreen': "#4ade80",
         'dgreen': "#15803d",
         'dindigo': "#3730a3",
-        
+         "blue400":"#60a5fa",
         'dpurple':"#5b21b6",
         "crimson":"#dc143c",
         "Fuchsia" :"#f5d0fe",
-        "teal":"#2dd4bf"
+        "teal":"#2dd4bf",
+        "sky":"#bae6fd",
+        "red":"#dc2626"
       },
     },
   },

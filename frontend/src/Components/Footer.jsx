@@ -2,22 +2,13 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className='bg-tea text-white py-8 shadow-md rounded-lg  mt-16'>
-      <div className='container  flex flex-wrap  gap-16 px-4'>
-        <div className='flex flex-col gap-4'>
-          <h3 className='text-2xl font-semibold'>Quick Links</h3>
-          <p className='hover:text-gray-300 text-xl cursor-pointer'>About</p>
-          <p className='hover:text-gray-300 text-xl cursor-pointer'>Doctors</p>
-          <p className='hover:text-gray-300 text-xl cursor-pointer'>Technologies</p>
-          <p className='hover:text-gray-300 text-xl cursor-pointer'>Departments</p>
-          <p className='hover:text-gray-300 text-xl cursor-pointer'>Testimonials</p>
-        </div>
-        <div className='flex flex-col gap-4'>
-          <h3 className='text-2xl font-semibold'>Contact Us</h3>
-          <p className='text-xl'>Birtamode, Jhapa</p>
-          <p className='text-xl'>contact@sagarmathaGH.edu.np</p>
-          <p className='text-xl'>000-0000</p>
-        </div>
+    <footer className='bg-gray-800 text-white py-4 mt-16'>
+      <div className='container mx-auto text-center'>
+        <p className='text-sm mb-2'>© 2024 Sagarmatha General Hospital. All rights reserved.</p>
+        <p className='text-sm'>
+          <a href='https://myprofile-alpha-pink.vercel.app/' className='text-blue-400 hover:underline'>Created by DipsanKadariya</a>  
+         
+        </p>
       </div>
     </footer>
   );

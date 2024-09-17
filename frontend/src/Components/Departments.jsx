@@ -1,37 +1,44 @@
 import React from 'react';
 
+
 const departments = [
-  "Hepato biliary pancreatic Surgery",
+  "Hepato-biliary-pancreatic Surgery",
   "Pediatric Surgery",
   "Cardiothoracic Surgery",
   "Obstetrics and Gynecology Surgery",
   "Neurological Surgery",
-  "Emergency Medicine",
-  "Internal Medicine",
-  "Radiology"
 ];
+
+const depImages = {
+  "Hepato-biliary-pancreatic Surgery": "/hbp.png",
+  "Pediatric Surgery": "/pediatric.png",
+  "Cardiothoracic Surgery": "/cardio.png",
+  "Obstetrics and Gynecology Surgery": "/obs.png",
+  "Neurological Surgery": "/neuro.png",
+};
 
 function Departments() {
   return (
-    <div>
-        <div className=''>
-            <h2 className='text-4xl font-bold text-center mb-4'>Departments</h2>
-            <p className='text-xl  text-center  mb-4'>We offer comprehensive medical care across a wide range of specialties</p>
-        </div>
-    <div className='flex flex-wrap justify-center gap-6 p-4'>
-      {departments.map((department, index) => (
-        <div key={index} className='card-component flex flex-col items-center border rounded overflow-hidden shadow-lg w-64'>
-          <img
-            src='https://via.placeholder.com/150'
-            alt={department}
-            className='w-full h-40 object-cover'
-          />
-          <div className='p-4 flex flex-col items-center'>
-            <p className='text-xl font-semibold text-center'>{department}</p>
+    <div className='m-10 bg-shade'>
+      <p className='text-4xl font-bold text-center mb-4 text-dblue'>Our Departments</p>
+      <div className='flex flex-wrap gap-6 justify-center'>
+        {departments.map((department, index) => (
+          <div
+            key={index}
+            className='flex flex-col bg-white shadow-md rounded-lg w-64 h-40 p-4 justify-center items-center'
+          >
+            <div className='flex items-center justify-center w-full h-24 '>
+              <img
+                src={depImages[department]}
+                alt={department}
+                className='w-20 h-20 object-cover rounded-full'
+              />
+            </div>
+            <h2 className='text-xl font-bold text-dgreen text-center'>{department}</h2>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    
     </div>
   );
 }
