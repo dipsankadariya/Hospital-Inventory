@@ -24,7 +24,7 @@ function Appointments() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const apiUrl = process.env.REACT_APP_API_URL; // Use environment variable
+      const apiUrl = process.env.REACT_APP_API_URL;
       const response = await axios.post(`${apiUrl}/api/appointments`, formData);
       console.log('Appointment saved:', response.data);
 

@@ -10,7 +10,8 @@ function Queue() {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/appointments');
+      const apiUrl = process.env.REACT_APP_API_URL; 
+      const response = await axios.get(`${apiUrl}/api/appointments`);
       setAppointments(response.data);
     } catch (error) {
       console.error('Error fetching appointments:', error);
@@ -36,9 +37,9 @@ function Queue() {
               <tr key={appointment.id}>
                 <td className='border border-gray-300 p-2'>{appointment.id}</td>
                 <td className='border border-gray-300 p-2'>{appointment.name}</td>
-                <td className='border border-gray-300 p-2'>{new Date(appointment.createdAt).toLocaleDateString()}</td>
+                <td className='border border-gray-300 p-2'>{new Date(appointment.dob).toLocaleDateString()}</td> {/* Adjust if date field is different */}
                 <td className='border border-gray-300 p-2'>{appointment.preferredDoctor}</td>
-                <td className='border border-gray-300 p-2'>{appointment.status}</td>
+                <td className='border border-gray-300 p-2'>{appointment.status || 'Pending'}</td> {/* Default status if not present */}
               </tr>
             ))}
           </tbody>
