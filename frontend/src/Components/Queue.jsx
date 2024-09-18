@@ -2,7 +2,32 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Queue() {
-  const [appointments, setAppointments] = useState([]);
+
+  const dummyAppointments = [
+    {
+      id: '1',
+      name: 'Dipsan Kadariya',
+      dob: '2000-05-14',
+      preferredDoctor: 'Dr.Sangita Thapa',
+      status: 'Confirmed'
+    },
+    {
+      id: '2',
+      name: 'Amit Thapa',
+      dob: '1999-07-22',
+      preferredDoctor: 'Dr.Januka Thapa',
+      status: 'Pending'
+    },
+    {
+      id: '3',
+      name: 'Rujan Katwal',
+      dob: '1985-11-03',
+      preferredDoctor: 'Dr. Hari Jung Sahi',
+      status: 'Cancelled'
+    }
+  ];
+
+  const [appointments, setAppointments] = useState(dummyAppointments);
 
   useEffect(() => {
     fetchAppointments();
@@ -10,11 +35,14 @@ function Queue() {
 
   const fetchAppointments = async () => {
     try {
-      const apiUrl = process.env.REACT_APP_API_URL; 
+      const apiUrl = process.env.REACT_APP_API_URL;
       const response = await axios.get(`${apiUrl}/api/appointments`);
-      setAppointments(response.data);
+      
+      setAppointments(response.data.length ? response.data : dummyAppointments);
     } catch (error) {
       console.error('Error fetching appointments:', error);
+      
+      setAppointments(dummyAppointments);
     }
   };
 
@@ -37,9 +65,9 @@ function Queue() {
               <tr key={appointment.id}>
                 <td className='border border-gray-300 p-2'>{appointment.id}</td>
                 <td className='border border-gray-300 p-2'>{appointment.name}</td>
-                <td className='border border-gray-300 p-2'>{new Date(appointment.dob).toLocaleDateString()}</td> {/* Adjust if date field is different */}
+                <td className='border border-gray-300 p-2'>{new Date(appointment.dob).toLocaleDateString()}</td>
                 <td className='border border-gray-300 p-2'>{appointment.preferredDoctor}</td>
-                <td className='border border-gray-300 p-2'>{appointment.status || 'Pending'}</td> {/* Default status if not present */}
+                <td className='border border-gray-300 p-2'>{appointment.status || 'Pending'}</td>
               </tr>
             ))}
           </tbody>
