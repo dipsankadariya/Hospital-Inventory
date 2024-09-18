@@ -13,7 +13,6 @@ function Appointments() {
     purpose: ''
   });
 
- 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
@@ -22,14 +21,13 @@ function Appointments() {
     }));
   };
 
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/appointments', formData);
+      const apiUrl = process.env.REACT_APP_API_URL; // Use environment variable
+      const response = await axios.post(`${apiUrl}/api/appointments`, formData);
       console.log('Appointment saved:', response.data);
-      
-     
+
       setFormData({
         name: '',
         gender: '',
@@ -52,7 +50,7 @@ function Appointments() {
       <div className='w-full max-w-2xl p-6 bg-white shadow-lg rounded-lg'>
         <h2 className='text-3xl font-bold mb-6 text-center text-dblue'>Doctors Appointments Form</h2>
         <p className='text-lg mb-6 text-center text-dgray'>Please fill out the form with correct information.</p>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor='name' className='block mb-2 text-lg font-medium'>Name</label>
@@ -66,7 +64,7 @@ function Appointments() {
               className='w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
             />
           </div>
-          
+
           <div className='flex gap-4'>
             <div className='flex-1'>
               <label htmlFor='gender' className='block mb-2 text-lg font-medium'>Gender</label>
@@ -84,7 +82,7 @@ function Appointments() {
                 <option value='other'>Other</option>
               </select>
             </div>
-            
+
             <div className='flex-1'>
               <label htmlFor='dob' className='block mb-2 text-lg font-medium'>Date of Birth</label>
               <input
@@ -98,7 +96,7 @@ function Appointments() {
               />
             </div>
           </div>
-          
+
           <div>
             <label htmlFor='email' className='block mb-2 text-lg font-medium'>Email</label>
             <input
@@ -111,7 +109,7 @@ function Appointments() {
               className='w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
             />
           </div>
-          
+
           <div>
             <label htmlFor='phone' className='block mb-2 text-lg font-medium'>Phone Number</label>
             <input
@@ -124,7 +122,7 @@ function Appointments() {
               className='w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
             />
           </div>
-          
+
           <div>
             <label htmlFor='address' className='block mb-2 text-lg font-medium'>Address</label>
             <input
@@ -137,7 +135,7 @@ function Appointments() {
               className='w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
             />
           </div>
-          
+
           <div>
             <label htmlFor='preferredDoctor' className='block mb-2 text-lg font-medium'>Preferred Doctor</label>
             <input
@@ -149,7 +147,7 @@ function Appointments() {
               className='w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
             />
           </div>
-          
+
           <div>
             <label htmlFor='purpose' className='block mb-2 text-lg font-medium'>Purpose of Appointment</label>
             <textarea
@@ -162,7 +160,7 @@ function Appointments() {
               rows='4'
             />
           </div>
-          
+
           <button
             type='submit'
             className='w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500'
