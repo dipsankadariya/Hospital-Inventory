@@ -11,6 +11,7 @@ function Navbar() {
           <li><Link to="/departments" className="hover:text-gray-300">Departments</Link></li>
           <li><Link to="/services" className="hover:text-gray-300">Services</Link></li>
           <li><Link to="/appointments" className="hover:text-gray-300">Appointments</Link></li>
+          <li><Link to="/queue" className="hover:text-gray-300">Queue</Link></li>
           <li><Link to="/contact" className="hover:text-gray-300">Contact Us</Link></li>
           <li><Link to="/about" className="hover:text-gray-300">About</Link></li>
           

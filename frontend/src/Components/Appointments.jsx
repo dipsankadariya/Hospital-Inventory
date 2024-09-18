@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'; // Import axios
 
 function Appointments() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ function Appointments() {
     purpose: ''
   });
 
+  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
@@ -20,9 +22,29 @@ function Appointments() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted successfully', formData);
+    try {
+      const response = await axios.post('http://localhost:5000/api/appointments', formData);
+      console.log('Appointment saved:', response.data);
+      
+      // Reset form or show success message
+      setFormData({
+        name: '',
+        gender: '',
+        dob: '',
+        email: '',
+        phone: '',
+        address: '',
+        preferredDoctor: '',
+        purpose: ''
+      });
+      alert('Appointment saved successfully!');
+    } catch (error) {
+      console.error('Error saving appointment:', error);
+      alert('Error saving appointment. Please try again.');
+    }
   };
 
   return (

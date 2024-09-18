@@ -8,7 +8,7 @@ import Appointments from './Appointments';
 import Services from './Services';
 import Departments from './Departments';
 import Navbar from './Navbar';
-
+import Queue from './Queue';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/about", 
         element: <About />
+      },
+      {
+       path:"/queue",
+       element:<Queue/>
       },
     ]
   }
