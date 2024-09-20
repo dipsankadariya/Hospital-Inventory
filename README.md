@@ -1,7 +1,7 @@
 # Hospital Inventory Management System
 
 **Hospital Inventory** is a web application designed for hospitals to manage their inventory efficiently.
-It features a simple, user-friendly interface with key components that streamline hospital operations, including inventory management, appointments, and hospital staff information.
+It features a simple, user-friendly interface with key components that streamline hospital operations, including inventory management, appointments, and hospital staff informations.
 
 ## Features
 
