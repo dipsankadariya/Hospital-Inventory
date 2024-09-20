@@ -35,7 +35,7 @@ function Queue() {
 
   const fetchAppointments = async () => {
     try {
-      const apiUrl = process.env.REACT_APP_API_URL;
+      const apiUrl = 'http://localhost:5000';
       const response = await axios.get(`${apiUrl}/api/appointments`);
       
       setAppointments(response.data.length ? response.data : dummyAppointments);
