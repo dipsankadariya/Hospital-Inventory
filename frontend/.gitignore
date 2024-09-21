@@ -1,21 +1,49 @@
-# Logs
-logs
-*.log
+# Ignore everything
+*
+
+# But don't ignore these directories
+!frontend/
+!frontend/src/
+!frontend/src/Components/
+!backend/
+
+# Frontend specific files to include
+!frontend/src/*.js
+!frontend/src/*.jsx
+!frontend/src/*.css
+!frontend/src/Components/*.js
+!frontend/src/Components/*.jsx
+
+# Backend specific files to include
+!backend/*.js
+!backend/*.json
+
+# Don't ignore important config files
+!package.json
+!package-lock.json
+!vite.config.js
+!postcss.config.js
+!tailwind.config.js
+!.gitignore
+!README.md
+
+# Node.js specific
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Build outputs
+dist/
+dist-ssr/
 *.local
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
@@ -23,3 +51,27 @@ dist-ssr
 *.sln
 *.sw?
 
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Optional: Uncomment if you want to ignore all dot files except .gitignore
+#.*
+#!.gitignore
+
+# Optional: Uncomment if you want to ignore test files
+#**/tests/
+#*.test.js
+#*.spec.js
+
+# Optional: Uncomment if you want to ignore documentation
+#docs/
+#*.md
+#!README.md
